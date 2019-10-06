@@ -1,4 +1,4 @@
-# Implemented_ArrayList<E>
+# Implemented_ArrayList\<E>
 
 ### Implementation of ArrayList in Java
 
