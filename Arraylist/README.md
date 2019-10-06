@@ -7,10 +7,15 @@
 #### add (E value)
 #### adds value at the end of ArrayList
 
+* * *
+
 #### print ()
 #### prints ArrayList
+
+* * *
 
 #### size ()
 #### prints ArrayList size
 
+* * *
 
