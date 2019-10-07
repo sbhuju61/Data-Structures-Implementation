@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+
+
 class Implemented_ArrayList<E>{
     private int arraySize;
     private Object array[];
@@ -35,14 +37,21 @@ class Implemented_ArrayList<E>{
             System.out.print(this.array[i] + " ");
         }
     }
+    
+    @SuppressWarnings("unchecked")
+    public E get (int index){
+        if (index < 0 || index > this.arrayCount){
+            throw new IndexOutOfBoundsException(index);
+        }
+        return (E) this.array[index];
+    }
 
   public static void main(String[] args) {
         Implemented_ArrayList <Integer> intArrayList = new Implemented_ArrayList<Integer>();
-        System.out.println(intArrayList.arraySize);
         intArrayList.add(1);
-   
+        System.out.println(intArrayList.get(0));
         
-        System.out.print("Print ArrayList: ");
-        intArrayList.print();
+        System.out.print("Print ArrayList: "); intArrayList.print();
+        
     }
 }
