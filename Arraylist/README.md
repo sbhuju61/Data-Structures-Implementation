@@ -8,6 +8,10 @@
 #### adds value at the end of ArrayList
 
 * * *
+#### add (int index, E value)
+#### adds value at specified index of Arraylist
+
+* * *
 
 #### print ()
 #### prints ArrayList

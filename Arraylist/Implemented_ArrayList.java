@@ -1,55 +1,85 @@
 import java.util.Arrays;
 
-
-
 class Implemented_ArrayList<E>{
+
+    private int arrayCapacity;
     private int arraySize;
     private Object array[];
-    private int arrayCount;
+    
 
     Implemented_ArrayList(){
-        this.arraySize = 10;
-        this.arrayCount = 0;
 
-        this.array = new Object [this.arraySize];
+        this.arrayCapacity = 1;
+        this.array = new Object [this.arrayCapacity];
     }
 
-    private void expandArraySize(){
-        if (this.arraySize == this.arrayCount){
-            this.arraySize *= 2;
+    private void expandArrayCapacity(int index){
+
+        if (this.arrayCapacity <= index){
+            
+            this.arrayCapacity  = (this.arrayCapacity * 3)/2 + 1;
+            
         }
-        this.array = Arrays.copyOf(this.array, this.arraySize);
-       
+        this.array = Arrays.copyOf(this.array, this.arrayCapacity);
     }
 
     public void add(E value){
-        expandArraySize();
-        this.array[this.arrayCount] = value;
-        this.arrayCount++;
+
+        expandArrayCapacity(this.arraySize);
+        this.array[this.arraySize] = value;
+        this.arraySize++;
+    }
+
+    @SuppressWarnings("unchecked")
+    public void add(int index, E value){
+
+        get(index);
+        expandArrayCapacity(this.arraySize);
+        for(int i = this.arrayCapacity-this.arraySize+1; i>index; i--) { 
+            this.array[i] = this.array[i-1];
+        }
+        this.array[index] = value; 
+        this.arraySize++;
     }
 
     public int size (){
-        return this.arraySize;
+
+        return this.arrayCapacity;
     }
 
     public void print (){
-        for (int i = 0; i < this.arrayCount; i++){
-            System.out.print(this.array[i] + " ");
+
+        for (int i = 0; i < this.array.length; i++){
+            System.out.print(" " + i + ":" + this.array[i] + " |");
         }
     }
     
     @SuppressWarnings("unchecked")
     public E get (int index){
-        if (index < 0 || index > this.arrayCount){
+
+        if (index < 0 || index > this.array.length){
             throw new IndexOutOfBoundsException(index);
         }
         return (E) this.array[index];
     }
 
   public static void main(String[] args) {
+
         Implemented_ArrayList <Integer> intArrayList = new Implemented_ArrayList<Integer>();
         intArrayList.add(1);
-        System.out.println(intArrayList.get(0));
+        intArrayList.add(2);
+        intArrayList.add(3);
+        intArrayList.add(32);
+        intArrayList.add(1,45);
+        intArrayList.add(32);
+        intArrayList.add(33423);
+        intArrayList.add(323);
+        intArrayList.add(945);
+        
+        
+        
+        //intArrayList.add(10,49);
+        //System.out.println(intArrayList.get(1));
         
         System.out.print("Print ArrayList: "); intArrayList.print();
         
