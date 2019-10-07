@@ -18,4 +18,6 @@
 #### prints ArrayList size
 
 * * *
+#### get (int index)
+#### get value at index in ArrayList
 
