@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.lang.StringBuilder;
 
 class Implemented_ArrayList<E>{
 
@@ -49,9 +50,20 @@ class Implemented_ArrayList<E>{
 
     public void print (){
 
-        for (int i = 0; i < this.array.length; i++){
+        for (int i = 0; i < this.arraySize; i++){
             System.out.print(" " + i + ":" + this.array[i] + " |");
         }
+    }
+
+    public String toString(){
+
+        StringBuilder toString = new StringBuilder();
+
+        for (int i = 0; i < this.arraySize; i++){
+            toString.append(" " + i + ":" + this.array[i] + " |");
+        }
+        
+        return toString.toString();
     }
     
     @SuppressWarnings("unchecked")
@@ -81,7 +93,7 @@ class Implemented_ArrayList<E>{
         //intArrayList.add(10,49);
         //System.out.println(intArrayList.get(1));
         
-        System.out.print("Print ArrayList: "); intArrayList.print();
+        System.out.print("Print ArrayList: "+ intArrayList.toString()); 
         
     }
 }

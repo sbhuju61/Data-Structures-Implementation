@@ -13,6 +13,11 @@
 
 * * *
 
+#### get (int index)
+#### get value at index in ArrayList
+
+***
+
 #### print ()
 #### prints ArrayList
 
@@ -22,6 +27,8 @@
 #### prints ArrayList size
 
 * * *
-#### get (int index)
-#### get value at index in ArrayList
+#### toString()
+#### returns ArrayList as string 
+
+
 
