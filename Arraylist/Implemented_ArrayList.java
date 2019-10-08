@@ -45,7 +45,7 @@ class Implemented_ArrayList<E>{
 
     public int size (){
 
-        return this.arrayCapacity;
+        return this.arraySize;
     }
 
     public void print (){
@@ -62,7 +62,7 @@ class Implemented_ArrayList<E>{
         for (int i = 0; i < this.arraySize; i++){
             toString.append(" " + i + ":" + this.array[i] + " |");
         }
-        
+
         return toString.toString();
     }
     
@@ -85,13 +85,12 @@ class Implemented_ArrayList<E>{
         intArrayList.add(1,45);
         intArrayList.add(32);
         intArrayList.add(33423);
-        intArrayList.add(323);
-        intArrayList.add(945);
+        
         
         
         
         //intArrayList.add(10,49);
-        //System.out.println(intArrayList.get(1));
+        System.out.println(intArrayList.size());
         
         System.out.print("Print ArrayList: "+ intArrayList.toString()); 
         
