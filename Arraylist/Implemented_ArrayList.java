@@ -50,9 +50,7 @@ class Implemented_ArrayList<E>{
 
     public void print (){
 
-        for (int i = 0; i < this.arraySize; i++){
-            System.out.print(" " + i + ":" + this.array[i] + " |");
-        }
+        System.out.println(toString());
     }
 
     public String toString(){
@@ -92,7 +90,7 @@ class Implemented_ArrayList<E>{
         //intArrayList.add(10,49);
         System.out.println(intArrayList.size());
         
-        System.out.print("Print ArrayList: "+ intArrayList.toString()); 
+        intArrayList.print();
         
     }
 }
